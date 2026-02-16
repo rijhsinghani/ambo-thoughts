@@ -25,7 +25,7 @@
   --shadow-lg: 0 4px 16px rgba(0, 31, 91, 0.18);
   --radius: 8px;
   --max-width: 1200px;
-  --header-height: 72px;
+  --header-height: 90px;
   --transition: 0.25s ease;
 }
 
@@ -145,16 +145,14 @@ main {
   gap: 0.75rem;
   color: var(--gold);
   font-family: "Patrick Hand", "Chalkboard SE", "Comic Sans MS", cursive;
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   white-space: nowrap;
 }
 
-.site-logo img {
-  height: 44px;
-  width: 44px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--gold);
+.site-logo svg {
+  height: 52px;
+  width: 52px;
+  flex-shrink: 0;
 }
 
 .site-logo:hover {
@@ -301,6 +299,48 @@ main {
 
 .slider-next {
   right: 0;
+}
+
+/* ============================================================
+   CATEGORY NAVIGATION — row of clickable category boxes
+   ============================================================ */
+.category-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 1rem 2rem;
+}
+
+.category-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.category-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.75rem;
+  border: 2px solid var(--white);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-family: "Patrick Hand", "Chalkboard SE", "Comic Sans MS", cursive;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: transparent;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.category-box:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
 }
 
 /* ============================================================
@@ -1258,7 +1298,7 @@ main {
 
 @media (max-width: 768px) {
   :root {
-    --header-height: 60px;
+    --header-height: 72px;
   }
 
   .menu-toggle {
@@ -1294,7 +1334,16 @@ main {
   }
 
   .hero-slider {
-    height: 280px;
+    height: 300px;
+  }
+
+  .category-box {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .category-boxes {
+    gap: 0.5rem;
   }
 
   .slide-content h2 {
@@ -1360,6 +1409,14 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .category-boxes {
+    flex-wrap: wrap;
+  }
+
+  .category-box {
+    flex: 1 1 calc(50% - 0.5rem);
+  }
+
   .archive-item {
     flex-direction: column;
   }
@@ -1380,11 +1437,11 @@ main {
   }
 
   .site-logo {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 
-  .site-logo img {
-    height: 36px;
-    width: 36px;
+  .site-logo svg {
+    height: 42px;
+    width: 42px;
   }
 }

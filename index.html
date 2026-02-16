@@ -11,13 +11,19 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- ============================================================
-         HEADER — copied from reference: logo left, nav right, sticky
-         ============================================================ -->
     <header class="site-header">
       <div class="container header-inner">
         <a href="index.html" class="site-logo">
-          <img src="images/deacon-henry.jpg" alt="Deacon Henry Cugini" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 44 44"
+            width="44"
+            height="44"
+            aria-hidden="true"
+          >
+            <rect x="19" y="4" width="6" height="36" rx="1" fill="#c9a84c" />
+            <rect x="10" y="14" width="24" height="6" rx="1" fill="#c9a84c" />
+          </svg>
           Ambo Thoughts
         </a>
         <button
@@ -38,10 +44,7 @@
     </header>
 
     <main>
-      <!-- ============================================================
-           HERO SLIDER — copied from reference Fusion Slider
-           4 slides with background images, overlaid text, nav arrows
-           ============================================================ -->
+      <!-- Hero Slider -->
       <section class="hero-slider" aria-label="Featured reflections">
         <div
           class="slide active"
@@ -54,7 +57,6 @@
             <div class="slide-content">
               <h2>Ambo Thoughts</h2>
               <p>Reflections from the ambo to the world</p>
-              <a href="blog.html" class="btn">Read Homilies</a>
             </div>
           </div>
         </div>
@@ -72,9 +74,6 @@
               <p>
                 On this sacred evening, we remember Christ's command to serve
               </p>
-              <a href="blog/2026-holy-thursday-reflection.html" class="btn"
-                >Read More</a
-              >
             </div>
           </div>
         </div>
@@ -90,7 +89,6 @@
             <div class="slide-content">
               <h2>The Good Samaritan in Our Time</h2>
               <p>Who is our neighbor in a divided world?</p>
-              <a href="blog/sample-homily.html" class="btn">Read More</a>
             </div>
           </div>
         </div>
@@ -111,6 +109,15 @@
           </div>
         </div>
 
+        <div class="category-nav">
+          <div class="category-boxes">
+            <a href="blog.html" class="category-box">Homilies</a>
+            <a href="spirituality.html" class="category-box">Spirituality</a>
+            <a href="church-news.html" class="category-box">Church News</a>
+            <a href="pictures.html" class="category-box">Pictures</a>
+          </div>
+        </div>
+
         <button class="slider-nav slider-prev" aria-label="Previous slide">
           &#10094;
         </button>
@@ -119,10 +126,7 @@
         </button>
       </section>
 
-      <!-- ============================================================
-           "THE BLOG" — copied from reference: section heading + 3-col
-           post grid with image, title, date, category, excerpt, Read More
-           ============================================================ -->
+      <!-- Latest Homilies -->
       <section class="section-band section-band--gray">
         <div class="container">
           <div class="section-heading">
@@ -228,10 +232,7 @@
         </div>
       </section>
 
-      <!-- ============================================================
-           "BECOME A PARTNER" — copied from reference Patreon section
-           3 tier cards on blue-accent background
-           ============================================================ -->
+      <!-- Support the Ministry -->
       <section class="section-band section-band--accent">
         <div class="container">
           <div class="section-heading">
@@ -262,10 +263,7 @@
         </div>
       </section>
 
-      <!-- ============================================================
-           VIDEO SECTION — adapted from reference "Browse the Books"
-           3 video embeds in a grid
-           ============================================================ -->
+      <!-- Video Section -->
       <section class="section-band section-band--white">
         <div class="container">
           <div class="section-heading">
@@ -342,9 +340,7 @@
         </div>
       </section>
 
-      <!-- ============================================================
-           CONTACT SECTION — copied from reference: form with bg overlay
-           ============================================================ -->
+      <!-- Contact -->
       <section class="contact-band" style="text-align: center">
         <h2>Contact Deacon Henry</h2>
         <p class="subtitle">Questions or prayer requests</p>
@@ -369,9 +365,6 @@
       </section>
     </main>
 
-    <!-- ============================================================
-         COPYRIGHT FOOTER — copied from reference: copyright + social
-         ============================================================ -->
     <footer class="site-footer">
       <div class="container">
         <p class="footer-content">
