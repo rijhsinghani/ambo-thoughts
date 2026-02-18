@@ -49,27 +49,46 @@
     <main>
       <div class="container">
         <div class="section-heading">
-          <h2>Get in Touch</h2>
+          <h2>Contact Deacon Henry</h2>
         </div>
 
-        <div class="content-section" style="text-align: center">
-          <p>
-            Have a question, prayer request, or just want to say hello? Reach
-            out to Deacon Henry directly:
+        <div class="content-section">
+          <p style="text-align: center; margin-bottom: 2rem">
+            Please email Deacon Henry below. He will attempt to respond as
+            quickly as possible!
           </p>
 
-          <p style="margin: 2rem 0">
-            <a
-              href="mailto:deacon267@verizon.net"
-              class="btn"
-              style="font-size: 1.15rem"
-              >deacon267@verizon.net</a
-            >
-          </p>
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/deacon267@verizon.net"
+            method="POST"
+          >
+            <div class="form-group">
+              <label for="contact-name"
+                >Your Name <span style="color: #c00">(required)</span></label
+              >
+              <input type="text" id="contact-name" name="name" required />
+            </div>
 
-          <p style="color: var(--text-muted); font-size: 0.9rem">
-            Diocese of Trenton, New Jersey
-          </p>
+            <div class="form-group">
+              <label for="contact-email"
+                >Your Email <span style="color: #c00">(required)</span></label
+              >
+              <input type="email" id="contact-email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" name="subject" />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Your Message</label>
+              <textarea id="contact-message" name="message" rows="6"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+          </form>
         </div>
       </div>
     </main>
