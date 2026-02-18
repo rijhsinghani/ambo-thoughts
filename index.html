@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ambo Thoughts — Deacon Henry Cugini</title>
+    <title>Ambo Thoughts with Deacon Cugini</title>
     <meta
       name="description"
       content="Reflections, homilies, and ministry from Deacon Henry Cugini of the Diocese of Trenton."
@@ -14,17 +14,16 @@
     <header class="site-header">
       <div class="container header-inner">
         <a href="index.html" class="site-logo">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 44 44"
-            width="44"
-            height="44"
-            aria-hidden="true"
-          >
-            <rect x="19" y="4" width="6" height="36" rx="1" fill="#c9a84c" />
-            <rect x="10" y="14" width="24" height="6" rx="1" fill="#c9a84c" />
-          </svg>
+          <img
+            src="images/deacons-cross.png"
+            alt="Deacon's Cross"
+            width="80"
+            height="120"
+          />
           Ambo Thoughts
+          <span style="font-size: 0.5em; display: inline; letter-spacing: 0"
+            >with Deacon Cugini</span
+          >
         </a>
         <button
           class="menu-toggle"
@@ -35,89 +34,47 @@
         </button>
         <ul class="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
           <li><a href="blog.html">Homilies</a></li>
-          <li><a href="videos.html">Videos</a></li>
+          <li><a href="spirituality.html">Spirituality</a></li>
+          <li><a href="church-news.html">Church News</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="stuff.html">Stuff</a></li>
+          <li><a href="prayer-partner.html">Prayer Partner</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </header>
 
     <main>
-      <!-- Hero Slider -->
-      <section class="hero-slider" aria-label="Featured reflections">
+      <section class="hero-slider">
         <div
           class="slide active"
           style="
-            background-image: url(&quot;images/deacon-henry-hero.jpg&quot;);
-            background-position: center top;
+            background: url(&quot;images/ambo-hero.jpg&quot;) center 25% / cover
+              no-repeat;
           "
-        >
-          <div class="slide-overlay">
-            <div class="slide-content">
-              <h2>Ambo Thoughts</h2>
-              <p>Reflections from the ambo to the world</p>
-            </div>
-          </div>
-        </div>
-
+        ></div>
         <div
           class="slide"
           style="
-            background-image: url(&quot;images/blog/holy-thursday.jpg&quot;);
-            background-color: var(--navy);
+            background: url(&quot;images/hero/easter-vigil-procession.jpg&quot;)
+              center 15% / cover no-repeat;
           "
-        >
-          <div class="slide-overlay">
-            <div class="slide-content">
-              <h2>Holy Thursday: A Night of Service</h2>
-              <p>
-                On this sacred evening, we remember Christ's command to serve
-              </p>
-            </div>
-          </div>
-        </div>
-
+        ></div>
         <div
           class="slide"
           style="
-            background-image: url(&quot;images/blog/good-samaritan.jpg&quot;);
-            background-color: var(--navy);
+            background: url(&quot;images/hero/midnight-mass-incense.jpg&quot;)
+              center 20% / cover no-repeat;
           "
-        >
-          <div class="slide-overlay">
-            <div class="slide-content">
-              <h2>The Good Samaritan in Our Time</h2>
-              <p>Who is our neighbor in a divided world?</p>
-            </div>
-          </div>
-        </div>
-
+        ></div>
         <div
           class="slide"
           style="
-            background-image: url(&quot;images/blog/lent.jpg&quot;);
-            background-color: var(--navy);
+            background: url(&quot;images/hero/easter-vigil-candles.jpg&quot;)
+              center 20% / cover no-repeat;
           "
-        >
-          <div class="slide-overlay">
-            <div class="slide-content">
-              <h2>Watch the Latest Homilies</h2>
-              <p>Video reflections from Deacon Henry</p>
-              <a href="videos.html" class="btn">Watch Now</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="category-nav">
-          <div class="category-boxes">
-            <a href="blog.html" class="category-box">Homilies</a>
-            <a href="spirituality.html" class="category-box">Spirituality</a>
-            <a href="church-news.html" class="category-box">Church News</a>
-            <a href="pictures.html" class="category-box">Pictures</a>
-          </div>
-        </div>
-
+        ></div>
         <button class="slider-nav slider-prev" aria-label="Previous slide">
           &#10094;
         </button>
@@ -125,251 +82,13 @@
           &#10095;
         </button>
       </section>
-
-      <!-- Latest Homilies -->
-      <section class="section-band section-band--gray">
-        <div class="container">
-          <div class="section-heading">
-            <h2 class="text-blue">Latest Homilies</h2>
-          </div>
-          <p class="section-subheading">RECENT REFLECTIONS FROM THE AMBO</p>
-
-          <div class="post-grid">
-            <!-- Post 1 -->
-            <article class="post-card">
-              <img
-                src="images/blog/holy-thursday.jpg"
-                alt="Holy Thursday reflection"
-                class="post-card-image"
-              />
-              <div class="post-card-body">
-                <h3>
-                  <a href="blog/2026-holy-thursday-reflection.html"
-                    >Holy Thursday: A Night of Service</a
-                  >
-                </h3>
-                <p class="post-card-meta">
-                  <span>April 6, 2026</span>
-                  <span>Holy Week</span>
-                </p>
-                <p class="post-card-excerpt">
-                  Tonight we gather to remember. Not simply to recall an event
-                  from two thousand years ago, but to enter into a living
-                  memory&hellip;
-                </p>
-              </div>
-              <div class="post-card-footer">
-                <a
-                  href="blog/2026-holy-thursday-reflection.html"
-                  class="read-more"
-                  >Read More &rarr;</a
-                >
-              </div>
-            </article>
-
-            <!-- Post 2 -->
-            <article class="post-card">
-              <img
-                src="images/blog/good-samaritan.jpg"
-                alt="Good Samaritan homily"
-                class="post-card-image"
-              />
-              <div class="post-card-body">
-                <h3>
-                  <a href="blog/sample-homily.html"
-                    >The Good Samaritan in Our Time</a
-                  >
-                </h3>
-                <p class="post-card-meta">
-                  <span>March 24, 2026</span>
-                  <span>3rd Sunday of Lent</span>
-                </p>
-                <p class="post-card-excerpt">
-                  Every one of us has been both the man left on the road and the
-                  one who passed by. The parable is a mirror held up to our own
-                  lives&hellip;
-                </p>
-              </div>
-              <div class="post-card-footer">
-                <a href="blog/sample-homily.html" class="read-more"
-                  >Read More &rarr;</a
-                >
-              </div>
-            </article>
-
-            <!-- Post 3 -->
-            <article class="post-card">
-              <img
-                src="images/blog/lent.jpg"
-                alt="Ash Wednesday reflection"
-                class="post-card-image"
-              />
-              <div class="post-card-body">
-                <h3>
-                  <a href="blog.html">Ash Wednesday: Begin Again</a>
-                </h3>
-                <p class="post-card-meta">
-                  <span>February 14, 2026</span>
-                  <span>Lent</span>
-                </p>
-                <p class="post-card-excerpt">
-                  Every Lent invites us to start fresh. The ashes on our
-                  foreheads remind us of both our mortality and our infinite
-                  capacity for renewal&hellip;
-                </p>
-              </div>
-              <div class="post-card-footer">
-                <a href="blog.html" class="read-more">Read More &rarr;</a>
-              </div>
-            </article>
-          </div>
-
-          <div class="discover-more-row">
-            <a href="blog.html" class="btn-outline btn">
-              Discover More Homilies &rarr;
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Support the Ministry -->
-      <section class="section-band section-band--accent">
-        <div class="container">
-          <div class="section-heading">
-            <h2 class="text-center" style="color: var(--navy)">
-              Support the Ministry
-            </h2>
-          </div>
-
-          <div class="tier-grid" style="grid-template-columns: repeat(2, 1fr)">
-            <div class="tier-card">
-              <h3>Prayer Partner</h3>
-              <h5>Join the prayer chain</h5>
-              <p>
-                Commit to praying for the intentions of our community. Receive a
-                weekly reflection and prayer intention by email.
-              </p>
-            </div>
-
-            <div class="tier-card">
-              <h3>Ministry Supporter</h3>
-              <h5>Help spread the Word</h5>
-              <p>
-                Your support helps maintain this site, produce video content,
-                and reach more people with the Gospel message.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Video Section -->
-      <section class="section-band section-band--white">
-        <div class="container">
-          <div class="section-heading">
-            <h2 class="text-blue">Watch the Latest Homilies</h2>
-          </div>
-          <p class="section-subheading">VIDEO REFLECTIONS FROM DEACON HENRY</p>
-
-          <div class="media-grid">
-            <div class="video-card">
-              <div class="video-wrapper">
-                <iframe
-                  src="https://www.youtube.com/embed/_a_zLTOxr0o"
-                  allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                    web-share;
-                  "
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                  title="New Life In the Spirit — Deacon Henry Cugini"
-                  loading="lazy"
-                ></iframe>
-              </div>
-              <div class="card-body">
-                <h3>New Life In the Spirit</h3>
-                <p class="card-meta">Featured Talk</p>
-              </div>
-            </div>
-
-            <a
-              href="https://drive.google.com/drive/u/1/folders/1O9qoJWNl7aG9ZhgwnzLSrfSWk_cZpJpR"
-              target="_blank"
-              rel="noopener"
-              class="video-placeholder"
-            >
-              <div class="video-placeholder-thumb">
-                <span class="play-icon">&#9654;</span>
-              </div>
-              <div class="card-body">
-                <h3>Third Sunday of Lent</h3>
-                <p class="card-meta">March 3, 2026</p>
-                <p class="card-note">
-                  Full Mass recording &mdash; homily begins ~17:00
-                </p>
-              </div>
-            </a>
-
-            <a
-              href="https://drive.google.com/drive/u/1/folders/1O9qoJWNl7aG9ZhgwnzLSrfSWk_cZpJpR"
-              target="_blank"
-              rel="noopener"
-              class="video-placeholder"
-            >
-              <div class="video-placeholder-thumb">
-                <span class="play-icon">&#9654;</span>
-              </div>
-              <div class="card-body">
-                <h3>Ash Wednesday</h3>
-                <p class="card-meta">February 14, 2026</p>
-                <p class="card-note">
-                  Full Mass recording &mdash; homily begins ~16:00
-                </p>
-              </div>
-            </a>
-          </div>
-
-          <div class="text-center mt-3">
-            <a href="videos.html" class="btn">Browse All Videos &rarr;</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section class="contact-band" style="text-align: center">
-        <h2>Contact Deacon Henry</h2>
-        <p class="subtitle">Questions or prayer requests</p>
-
-        <p style="margin: 1.5rem 0">
-          <a
-            href="mailto:deacon267@verizon.net"
-            class="btn"
-            style="
-              font-size: 1.15rem;
-              background: var(--navy);
-              color: var(--gold);
-              border-color: var(--gold);
-            "
-            >deacon267@verizon.net</a
-          >
-        </p>
-
-        <p style="font-size: 0.9rem; color: var(--text-dark)">
-          Diocese of Trenton, New Jersey
-        </p>
-      </section>
     </main>
 
     <footer class="site-footer">
       <div class="container">
         <p class="footer-content">
           &copy; 2026 Deacon Henry Cugini &bull; Diocese of Trenton<br />
-          <em>Ambo Thoughts</em> &mdash; Reflections from the ambo to the world.
+          <em>Ambo Thoughts</em> &mdash; Reflections from the ambo to you.
         </p>
       </div>
     </footer>

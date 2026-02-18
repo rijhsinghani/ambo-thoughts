@@ -32,66 +32,47 @@
     }
   });
 
-  // ── Hero Slider — auto-rotate + arrow navigation ───────
-  var slider = document.querySelector(".hero-slider");
-  if (slider) {
-    var slides = slider.querySelectorAll(".slide");
-    var prevBtn = slider.querySelector(".slider-prev");
-    var nextBtn = slider.querySelector(".slider-next");
-    var currentSlide = 0;
-    var slideCount = slides.length;
-    var autoInterval = 5000; // 5 seconds per slide
-    var timer;
+  // ── Hero slider — auto-rotate + arrow navigation ──────
+  var slides = document.querySelectorAll(".hero-slider .slide");
+  var prevBtn = document.querySelector(".slider-prev");
+  var nextBtn = document.querySelector(".slider-next");
+
+  if (slides.length > 1) {
+    var current = 0;
+    var total = slides.length;
+    var interval;
 
     function goToSlide(index) {
-      slides[currentSlide].classList.remove("active");
-      currentSlide = (index + slideCount) % slideCount;
-      slides[currentSlide].classList.add("active");
-    }
-
-    function nextSlide() {
-      goToSlide(currentSlide + 1);
-    }
-
-    function prevSlide() {
-      goToSlide(currentSlide - 1);
+      slides[current].classList.remove("active");
+      current = (index + total) % total;
+      slides[current].classList.add("active");
     }
 
     function startAutoRotate() {
-      timer = setInterval(nextSlide, autoInterval);
+      interval = setInterval(function () {
+        goToSlide(current + 1);
+      }, 5000);
     }
 
     function resetAutoRotate() {
-      clearInterval(timer);
+      clearInterval(interval);
       startAutoRotate();
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener("click", function () {
-        nextSlide();
-        resetAutoRotate();
-      });
     }
 
     if (prevBtn) {
       prevBtn.addEventListener("click", function () {
-        prevSlide();
+        goToSlide(current - 1);
         resetAutoRotate();
       });
     }
 
-    // Pause auto-rotate on hover
-    slider.addEventListener("mouseenter", function () {
-      clearInterval(timer);
-    });
-
-    slider.addEventListener("mouseleave", function () {
-      startAutoRotate();
-    });
-
-    // Start auto-rotation
-    if (slideCount > 1) {
-      startAutoRotate();
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        goToSlide(current + 1);
+        resetAutoRotate();
+      });
     }
+
+    startAutoRotate();
   }
 })();
