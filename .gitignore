@@ -14,3 +14,23 @@ reference/
 
 # Planning docs
 .planning/
+
+# OAuth2 credentials and tokens (sensitive)
+scripts/client_secrets.json
+scripts/*.token.json
+scripts/token.json
+
+# Processing artifacts
+scripts/manifest.json
+/tmp/homily_*.mp4
+
+# Python
+__pycache__/
+*.pyc
+scripts/.env
+
+# Local Netlify folder
+.netlify
+
+# Claude Code worktrees (should never be committed)
+.claude/
