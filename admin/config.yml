@@ -1,6 +1,8 @@
 backend:
   name: git-gateway
   branch: main
+  identity_url: "https://ambothoughts.netlify.app/.netlify/identity"
+  gateway_url: "https://ambothoughts.netlify.app/.netlify/git"
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
