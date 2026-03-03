@@ -11,14 +11,31 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <a
+      href="#main-content"
+      class="sr-only"
+      style="
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--gold);
+        color: var(--navy);
+        padding: 8px;
+        z-index: 1000;
+        transition: top 0.2s;
+      "
+      onfocus="this.style.top = '0'"
+      onblur="this.style.top = '-40px'"
+      >Skip to main content</a
+    >
     <header class="site-header">
       <div class="container header-inner">
         <a href="index.html" class="site-logo">
           <img
             src="images/deacons-cross.png"
             alt="Deacon's Cross"
-            width="80"
-            height="120"
+            width="60"
+            height="90"
           />
           Ambo Thoughts
           <span style="font-size: 0.5em; display: inline; letter-spacing: 0"
@@ -45,42 +62,82 @@
       </div>
     </header>
 
-    <main>
-      <section class="hero-slider">
-        <div
-          class="slide active"
-          style="
-            background: url(&quot;images/hero/hero-1.jpg&quot;) center 30% /
-              cover no-repeat;
-          "
-        ></div>
-        <div
-          class="slide"
-          style="
-            background: url(&quot;images/hero/picture2.jpg&quot;) center 25% /
-              cover no-repeat;
-          "
-        ></div>
-        <div
-          class="slide"
-          style="
-            background: url(&quot;images/hero/picture3.jpg&quot;) center 20% /
-              cover no-repeat;
-          "
-        ></div>
-        <div
-          class="slide"
-          style="
-            background: url(&quot;images/hero/picture4.jpg&quot;) center 30% /
-              cover no-repeat;
-          "
-        ></div>
+    <main id="main-content">
+      <section
+        class="hero-slider"
+        role="region"
+        aria-label="Featured image slideshow"
+      >
+        <div class="slide slide-1 active">
+          <div class="slide-overlay">
+            <div class="slide-content">
+              <h2>Ambo Thoughts</h2>
+              <p>Reflections from the ambo to you</p>
+              <a href="blog.html" class="btn">Read the Blog</a>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide-2">
+          <div class="slide-overlay">
+            <div class="slide-content">
+              <h2>Preach the Gospel at All Times</h2>
+              <p>And if necessary, use words</p>
+              <a href="about.html" class="btn">About Deacon Henry</a>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide-3">
+          <div class="slide-overlay">
+            <div class="slide-content">
+              <h2>Watch &amp; Listen</h2>
+              <p>Video homilies from Mass</p>
+              <a href="videos.html" class="btn">Browse Videos</a>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide-4">
+          <div class="slide-overlay">
+            <div class="slide-content">
+              <h2>Join the Prayer Chain</h2>
+              <p>Lift each other up in prayer</p>
+              <a href="prayer-partner.html" class="btn"
+                >Become a Prayer Partner</a
+              >
+            </div>
+          </div>
+        </div>
         <button class="slider-nav slider-prev" aria-label="Previous slide">
           &#10094;
         </button>
         <button class="slider-nav slider-next" aria-label="Next slide">
           &#10095;
         </button>
+        <div class="slider-dots" role="tablist" aria-label="Slide navigation">
+          <button
+            class="dot active"
+            role="tab"
+            aria-selected="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            class="dot"
+            role="tab"
+            aria-selected="false"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            class="dot"
+            role="tab"
+            aria-selected="false"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            class="dot"
+            role="tab"
+            aria-selected="false"
+            aria-label="Slide 4"
+          ></button>
+        </div>
       </section>
 
       <!-- Blog / Homilies Section -->
@@ -90,7 +147,7 @@
             <h2 class="text-gold">The Blog</h2>
           </div>
 
-          <div class="post-grid">
+          <div class="post-grid post-grid--two">
             <div class="post-card-wrapper">
               <p class="post-card-label">Holy Thursday<br />Reflection</p>
               <article class="post-card">
@@ -144,91 +201,21 @@
                 </div>
               </article>
             </div>
-
-            <div class="post-card-wrapper">
-              <p class="post-card-label">Sunday<br />Homily</p>
-              <article class="post-card">
-                <div class="post-card-body">
-                  <p class="post-card-meta">
-                    <span>February 14, 2026</span><span>Ash Wednesday</span>
-                  </p>
-                  <h3><a href="#">Ash Wednesday: Begin Again</a></h3>
-                  <p class="post-card-excerpt">
-                    Every Lent invites us to start fresh. The ashes on our
-                    foreheads remind us of both our mortality and our infinite
-                    capacity for renewal.
-                  </p>
-                </div>
-                <div class="post-card-footer">
-                  <a href="#" class="read-more">Read more &rarr;</a>
-                </div>
-              </article>
-            </div>
-
-            <div class="post-card-wrapper">
-              <p class="post-card-label">Sunday<br />Homily</p>
-              <article class="post-card">
-                <div class="post-card-body">
-                  <p class="post-card-meta">
-                    <span>December 25, 2023</span><span>Christmas</span>
-                  </p>
-                  <h3><a href="#">The Light Shines in the Darkness</a></h3>
-                  <p class="post-card-excerpt">
-                    On this Christmas Day, we celebrate the mystery that the
-                    Creator of the universe chose to enter our world as a
-                    vulnerable child in a manger.
-                  </p>
-                </div>
-                <div class="post-card-footer">
-                  <a href="#" class="read-more">Read more &rarr;</a>
-                </div>
-              </article>
-            </div>
-
-            <div class="post-card-wrapper">
-              <p class="post-card-label">Sunday<br />Homily</p>
-              <article class="post-card">
-                <div class="post-card-body">
-                  <p class="post-card-meta">
-                    <span>December 3, 2023</span
-                    ><span>1st Sunday of Advent</span>
-                  </p>
-                  <h3><a href="#">Advent: The Art of Waiting</a></h3>
-                  <p class="post-card-excerpt">
-                    In a culture of instant everything, Advent teaches us the
-                    counter-cultural discipline of patient hope and joyful
-                    expectation.
-                  </p>
-                </div>
-                <div class="post-card-footer">
-                  <a href="#" class="read-more">Read more &rarr;</a>
-                </div>
-              </article>
-            </div>
-
-            <div class="post-card-wrapper">
-              <p class="post-card-label">Sunday<br />Homily</p>
-              <article class="post-card">
-                <div class="post-card-body">
-                  <p class="post-card-meta">
-                    <span>November 19, 2023</span><span>33rd Sunday OT</span>
-                  </p>
-                  <h3><a href="#">Gratitude as a Way of Life</a></h3>
-                  <p class="post-card-excerpt">
-                    The ten lepers were all healed, but only one returned to
-                    give thanks. What kind of gratitude marks our own lives?
-                  </p>
-                </div>
-                <div class="post-card-footer">
-                  <a href="#" class="read-more">Read more &rarr;</a>
-                </div>
-              </article>
-            </div>
           </div>
 
           <div class="discover-more-row">
             <a href="blog.html" class="btn">All Homilies &rarr;</a>
           </div>
+          <p
+            class="text-center mt-2"
+            style="
+              color: var(--gold-light);
+              font-size: 0.95rem;
+              font-style: italic;
+            "
+          >
+            More reflections coming soon.
+          </p>
         </div>
       </section>
 
@@ -268,67 +255,27 @@
             </div>
           </div>
 
-          <div class="video-grid">
-            <a
-              href="https://drive.google.com/drive/u/1/folders/1O9qoJWNl7aG9ZhgwnzLSrfSWk_cZpJpR"
-              target="_blank"
-              rel="noopener"
-              class="video-placeholder"
-            >
-              <div class="video-placeholder-thumb">
-                <span class="play-icon">&#9654;</span>
-              </div>
-              <div class="card-body">
-                <h3>Holy Thursday Homily 2026</h3>
-                <p class="card-note">
-                  Full Mass recording &mdash; homily begins ~18:00
-                </p>
-              </div>
-            </a>
-
-            <a
-              href="https://drive.google.com/drive/u/1/folders/1O9qoJWNl7aG9ZhgwnzLSrfSWk_cZpJpR"
-              target="_blank"
-              rel="noopener"
-              class="video-placeholder"
-            >
-              <div class="video-placeholder-thumb">
-                <span class="play-icon">&#9654;</span>
-              </div>
-              <div class="card-body">
-                <h3>Palm Sunday Reflection</h3>
-                <p class="card-note">
-                  Full Mass recording &mdash; homily begins ~15:00
-                </p>
-              </div>
-            </a>
-
-            <a
-              href="https://drive.google.com/drive/u/1/folders/1O9qoJWNl7aG9ZhgwnzLSrfSWk_cZpJpR"
-              target="_blank"
-              rel="noopener"
-              class="video-placeholder"
-            >
-              <div class="video-placeholder-thumb">
-                <span class="play-icon">&#9654;</span>
-              </div>
-              <div class="card-body">
-                <h3>3rd Sunday of Lent</h3>
-                <p class="card-note">
-                  Full Mass recording &mdash; homily begins ~17:00
-                </p>
-              </div>
-            </a>
+          <!-- Latest homily cards (populated by pipeline script) -->
+          <div
+            class="card-grid"
+            id="latest-homilies"
+            style="margin-bottom: 2rem"
+          >
+            <!-- LATEST_HOMILIES_PLACEHOLDER -->
           </div>
 
-          <div class="text-center mt-3">
-            <a
-              href="https://drive.google.com/drive/u/1/folders/1O9qoJWNl7aG9ZhgwnzLSrfSWk_cZpJpR"
-              target="_blank"
-              rel="noopener"
-              class="btn"
-              >Browse All Videos &rarr;</a
+          <div class="text-center mt-2">
+            <p
+              style="
+                color: var(--text-dark);
+                font-size: 1.05rem;
+                margin-bottom: 1.25rem;
+              "
             >
+              Deacon Henry's homilies are recorded during Mass.<br />
+              Browse the full collection organized by liturgical season.
+            </p>
+            <a href="blog.html" class="btn">Browse All Homilies &rarr;</a>
           </div>
         </div>
       </section>
@@ -354,5 +301,20 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.init({
+          APIUrl: "https://ambothoughts.netlify.app/.netlify/identity",
+        });
+        window.netlifyIdentity.on("init", function (user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function () {
+              document.location.href = "/ambo-thoughts/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
