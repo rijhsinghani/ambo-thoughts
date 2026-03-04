@@ -310,7 +310,11 @@
         window.netlifyIdentity.on("init", function (user) {
           if (!user) {
             window.netlifyIdentity.on("login", function () {
-              document.location.href = "/ambo-thoughts/admin/";
+              var base =
+                window.location.hostname === "rijhsinghani.github.io"
+                  ? "/ambo-thoughts"
+                  : "";
+              document.location.href = base + "/admin/";
             });
           }
         });
