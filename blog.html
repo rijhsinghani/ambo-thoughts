@@ -76,7 +76,46 @@
           </div>
         </div>
 
-        <div class="card-grid">
+        <!-- Video Homilies Section (populated by pipeline script) -->
+        <div class="section-heading mt-3">
+          <h2 class="text-gold">Video Homilies</h2>
+        </div>
+        <p class="text-center mb-3" style="color: var(--cream); opacity: 0.85">
+          Watch Deacon Henry's homilies recorded during Mass, with full
+          transcripts.
+        </p>
+
+        <div class="card-grid" id="homily-video-grid">
+          <!-- HOMILY_CARDS_PLACEHOLDER -->
+          <!-- The pipeline script replaces this comment with homily cards like:
+          <article class="homily-card">
+            <a href="blog/homily-SLUG.html" class="homily-card-thumb">
+              <img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg" alt="TITLE" loading="lazy" />
+              <span class="play-overlay">&#9654;</span>
+            </a>
+            <div class="homily-card-body">
+              <p class="homily-card-meta">DATE &bull; LITURGICAL_SEASON</p>
+              <h3>TITLE</h3>
+              <p class="homily-card-excerpt">DESCRIPTION</p>
+              <a href="blog/homily-SLUG.html" class="homily-card-link">Watch &amp; Read &rarr;</a>
+            </div>
+          </article>
+          -->
+        </div>
+
+        <!-- Written Reflections Section -->
+        <div class="section-heading mt-3">
+          <h2 class="text-gold">Written Reflections</h2>
+        </div>
+
+        <div
+          class="card-grid"
+          style="
+            max-width: 800px;
+            margin: 0 auto;
+            grid-template-columns: repeat(2, 1fr);
+          "
+        >
           <article class="card">
             <img
               src="images/blog/holy-thursday.jpg"
@@ -116,79 +155,6 @@
               <a href="blog/sample-homily.html" class="card-link"
                 >Read more &rarr;</a
               >
-            </div>
-          </article>
-
-          <article class="card">
-            <img
-              src="images/blog/sample-homily.jpg"
-              alt="Ash Wednesday"
-              class="card-image"
-            />
-            <div class="card-body">
-              <p class="card-meta">February 14, 2026 &bull; Ash Wednesday</p>
-              <h3>Ash Wednesday: Begin Again</h3>
-              <p>
-                Every Lent invites us to start fresh. The ashes on our foreheads
-                remind us of both our mortality and our infinite capacity for
-                renewal.
-              </p>
-              <a href="#" class="card-link">Read more &rarr;</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <img
-              src="images/blog/sample-homily.jpg"
-              alt="Christmas homily"
-              class="card-image"
-            />
-            <div class="card-body">
-              <p class="card-meta">December 25, 2023 &bull; Christmas</p>
-              <h3>The Light Shines in the Darkness</h3>
-              <p>
-                On this Christmas Day, we celebrate the mystery that the Creator
-                of the universe chose to enter our world as a vulnerable child
-                in a manger.
-              </p>
-              <a href="#" class="card-link">Read more &rarr;</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <img
-              src="images/blog/sample-homily.jpg"
-              alt="Advent reflection"
-              class="card-image"
-            />
-            <div class="card-body">
-              <p class="card-meta">
-                December 3, 2023 &bull; 1st Sunday of Advent
-              </p>
-              <h3>Advent: The Art of Waiting</h3>
-              <p>
-                In a culture of instant everything, Advent teaches us the
-                counter-cultural discipline of patient hope and joyful
-                expectation.
-              </p>
-              <a href="#" class="card-link">Read more &rarr;</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <img
-              src="images/blog/sample-homily.jpg"
-              alt="Thanksgiving reflection"
-              class="card-image"
-            />
-            <div class="card-body">
-              <p class="card-meta">November 19, 2023 &bull; 33rd Sunday OT</p>
-              <h3>Gratitude as a Way of Life</h3>
-              <p>
-                The ten lepers were all healed, but only one returned to give
-                thanks. What kind of gratitude marks our own lives?
-              </p>
-              <a href="#" class="card-link">Read more &rarr;</a>
             </div>
           </article>
         </div>

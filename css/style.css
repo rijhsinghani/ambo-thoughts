@@ -25,12 +25,12 @@
   --shadow-lg: 0 4px 16px rgba(0, 31, 91, 0.18);
   --radius: 8px;
   --max-width: 1200px;
-  --header-height: 140px;
+  --header-height: 90px;
   --transition: 0.25s ease;
 }
 
 /* --- Font Face --- */
-@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Playfair+Display:wght@400;600;700&display=swap");
 
 /* --- Reset & Base --- */
 *,
@@ -80,7 +80,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Patrick Hand", "Chalkboard SE", "Comic Sans MS", cursive;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
   color: var(--gold);
   line-height: 1.3;
 }
@@ -146,11 +146,11 @@ main {
   gap: 0.75rem;
   color: var(--gold);
   font-family: "Patrick Hand", "Chalkboard SE", "Comic Sans MS", cursive;
-  font-size: 2.8rem;
+  font-size: 2.2rem;
 }
 
 .site-logo img {
-  height: 80px;
+  height: 60px;
   width: auto;
   flex-shrink: 0;
 }
@@ -201,10 +201,10 @@ main {
 .hero-slider {
   position: relative;
   width: 100%;
-  height: calc(100vh - var(--header-height));
+  height: min(85vh, 750px);
   overflow: hidden;
-  border-top: 12px solid var(--border-gray);
-  border-bottom: 12px solid var(--border-gray);
+  border-top: none;
+  border-bottom: 2px solid var(--gold);
 }
 
 .hero-slider .slide {
@@ -216,7 +216,7 @@ main {
   opacity: 0;
   transition: opacity 0.8s ease;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
 }
 
 .hero-slider .slide.active {
@@ -234,7 +234,12 @@ main {
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.55) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
 }
 
 .slide-content {
@@ -257,18 +262,39 @@ main {
 }
 
 .slide-content .btn {
-  background: transparent;
-  border: 2px solid var(--white);
-  color: var(--white);
+  background: var(--gold);
+  border: 2px solid var(--gold);
+  color: var(--navy);
   padding: 0.65rem 1.75rem;
   font-size: 0.95rem;
 }
 
 .slide-content .btn:hover {
-  background: var(--gold);
-  border-color: var(--gold);
+  background: var(--white);
+  border-color: var(--white);
   color: var(--navy);
 }
+
+/* --- Per-slide background images --- */
+.slide-1 {
+  background: url("../images/hero/hero-1.jpg") center center / cover no-repeat;
+}
+/* Sanctuary — no people, center works fine */
+
+.slide-2 {
+  background: url("../images/hero/picture2.jpg") center top / cover no-repeat;
+}
+/* Deacon Henry — anchor to top so head is never clipped */
+
+.slide-3 {
+  background: url("../images/hero/picture3.jpg") center top / cover no-repeat;
+}
+/* Deacon Henry solo — anchor to top */
+
+.slide-4 {
+  background: url("../images/hero/picture4.jpg") center center / cover no-repeat;
+}
+/* Empty sanctuary — no people, center works fine */
 
 /* Slider navigation arrows — copied from reference flexslider */
 .slider-nav {
@@ -299,6 +325,39 @@ main {
 
 .slider-next {
   right: 0;
+}
+
+/* --- Slider Dot Indicators --- */
+.slider-dots {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.dot.active {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.dot:hover {
+  border-color: var(--gold);
 }
 
 /* ============================================================
@@ -348,7 +407,7 @@ main {
    post grid with image, title, date, category, excerpt, Read More
    ============================================================ */
 .section-band {
-  padding: 3rem 0;
+  padding: 4rem 0;
 }
 
 .section-band--gray {
@@ -402,7 +461,13 @@ main {
 }
 
 .section-heading h2::after {
-  content: none;
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
 }
 
 /* --- Post Grid (3 columns) — copied from reference blog layout --- */
@@ -413,23 +478,35 @@ main {
   margin-bottom: 1.5rem;
 }
 
+.post-grid--two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
 .post-card-wrapper {
   display: flex;
   flex-direction: column;
 }
 
+.site-logo,
+.post-card-label,
+.category-box,
+.filter-btn {
+  font-family: "Patrick Hand", "Chalkboard SE", "Comic Sans MS", cursive;
+}
+
 .post-card-label {
   text-align: center;
-  font-family: "Patrick Hand", "Chalkboard SE", "Comic Sans MS", cursive;
   color: var(--gold);
   font-size: 1.05rem;
   margin-bottom: 0.5rem;
 }
 
 .post-card {
-  background: var(--light-gray);
-  border: 1px solid var(--border-gray);
-  border-bottom-width: 3px;
+  background: var(--cream);
+  border: 1px solid var(--cream);
+  border-bottom: 2px solid var(--gold);
   overflow: hidden;
   transition: transform var(--transition);
   flex: 1;
@@ -830,6 +907,7 @@ main {
   background: var(--navy-light);
   padding: 1.25rem 0;
   text-align: center;
+  border-top: 3px solid var(--gold);
 }
 
 .footer-content {
@@ -1296,6 +1374,233 @@ main {
 }
 
 /* ============================================================
+   HOMILY VIDEO PAGES — video embed + transcript + themes
+   ============================================================ */
+
+/* Pull Quote - centered, decorative */
+.homily-pull-quote {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+.homily-pull-quote blockquote {
+  border-left: 4px solid var(--gold);
+  padding: 1.25rem 1.5rem;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--cream);
+  background: rgba(201, 168, 76, 0.08);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+/* Video embed container */
+.homily-video {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid var(--gold);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Theme tags - pills/chips */
+.homily-themes {
+  margin-top: 2rem;
+}
+.theme-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.theme-tag {
+  background: var(--navy);
+  color: var(--gold);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--gold);
+}
+
+/* Scripture references */
+.homily-scripture {
+  margin-top: 2rem;
+}
+.homily-scripture ul {
+  list-style: none;
+  padding: 0;
+}
+.homily-scripture li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--border-gray);
+  color: var(--text-dark);
+}
+.homily-scripture li::before {
+  content: "\2022";
+  color: var(--gold);
+  font-weight: bold;
+  margin-right: 0.75rem;
+}
+
+/* Transcript toggle */
+.homily-transcript {
+  margin-top: 2rem;
+}
+.transcript-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: var(--navy);
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Playfair Display", Georgia, serif;
+  transition: background var(--transition);
+}
+.transcript-toggle:hover {
+  background: var(--navy-light);
+}
+.toggle-icon {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+}
+.transcript-toggle[aria-expanded="true"] .toggle-icon {
+  transform: rotate(180deg);
+}
+.transcript-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  background: var(--white);
+  border: 1px solid var(--border-gray);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 0 1.5rem;
+  color: var(--text-dark);
+  line-height: 1.8;
+}
+.transcript-content.open {
+  max-height: 5000px;
+  padding: 1.5rem;
+}
+.transcript-content p {
+  margin-bottom: 1rem;
+}
+
+/* Previous / Next navigation */
+.homily-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5rem 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.homily-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--navy-light);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  transition: background var(--transition);
+}
+.homily-nav a:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* Homily video card for listing page */
+.homily-card {
+  background: var(--cream);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.homily-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.homily-card-thumb {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+.homily-card-thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.homily-card-thumb .play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 31, 91, 0.8);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 1.5rem;
+  transition: background var(--transition);
+}
+.homily-card:hover .play-overlay {
+  background: var(--gold);
+  color: var(--navy);
+}
+.homily-card-body {
+  padding: 1.25rem;
+}
+.homily-card-body h3 {
+  color: var(--navy);
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+}
+.homily-card-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+.homily-card-excerpt {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+.homily-card-link {
+  display: inline-block;
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+}
+.homily-card-link:hover {
+  color: var(--gold);
+}
+
+/* ============================================================
    RESPONSIVE — copied from reference breakpoints: 640px, 1024px
    ============================================================ */
 @media (max-width: 1024px) {
@@ -1359,7 +1664,7 @@ main {
   }
 
   .hero-slider {
-    height: calc(100vh - var(--header-height));
+    height: min(75vh, 550px);
   }
 
   .category-box {
@@ -1415,6 +1720,36 @@ main {
   .contact-band h2 {
     font-size: 1.8rem;
   }
+
+  /* Homily video pages — tablet/mobile */
+  .homily-pull-quote {
+    margin-bottom: 1.5rem;
+  }
+
+  .homily-pull-quote blockquote {
+    font-size: 1rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .homily-video {
+    margin-bottom: 1.5rem;
+  }
+
+  .homily-nav {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 2rem 0;
+  }
+
+  .homily-nav a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .transcript-toggle {
+    font-size: 0.9rem;
+    padding: 0.85rem 1rem;
+  }
 }
 
 /* --- Watermark Background --- */
@@ -1439,6 +1774,11 @@ main {
 }
 
 @media (max-width: 640px) {
+  .slider-prev,
+  .slider-next {
+    display: none;
+  }
+
   .post-grid {
     grid-template-columns: 1fr;
   }
@@ -1474,6 +1814,27 @@ main {
 
   .subscribe-form {
     flex-direction: column;
+  }
+
+  /* Homily video pages — small mobile */
+  .homily-pull-quote blockquote {
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .theme-tags {
+    gap: 0.35rem;
+  }
+
+  .theme-tag {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.75rem;
+  }
+
+  .homily-card-thumb .play-overlay {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
   }
 }
 

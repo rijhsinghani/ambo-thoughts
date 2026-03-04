@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{TITLE}} — Ambo Thoughts</title>
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="../index.html" class="site-logo">
+          <img
+            src="../images/deacons-cross.png"
+            alt="Deacon's Cross"
+            width="80"
+            height="120"
+          />
+          Ambo Thoughts
+          <span style="font-size: 0.5em; display: inline; letter-spacing: 0"
+            >with Deacon Cugini</span
+          >
+        </a>
+        <button
+          class="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          &#9776;
+        </button>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../blog.html">Homilies</a></li>
+          <li><a href="../spirituality.html">Spirituality</a></li>
+          <li><a href="../church-news.html">Church News</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../stuff.html">Stuff</a></li>
+          <li><a href="../prayer-partner.html">Prayer Partner</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <a href="../blog.html" class="back-link">&larr; Back to Homilies</a>
+
+        <div class="post-header">
+          <h1>{{TITLE}}</h1>
+          <p class="post-meta">
+            {{DATE}} &bull; Deacon Henry Cugini &bull; {{LITURGICAL_SEASON}}
+          </p>
+        </div>
+
+        <!-- Pull Quote -->
+        <div class="homily-pull-quote">
+          <blockquote>{{PULL_QUOTE}}</blockquote>
+        </div>
+
+        <!-- Video Player -->
+        <div class="homily-video">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/{{YOUTUBE_ID}}"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              title="{{TITLE}} — Deacon Henry Cugini"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <article class="post-content">
+          <div class="homily-description">
+            <p>{{DESCRIPTION}}</p>
+          </div>
+
+          <!-- Key Themes -->
+          <div class="homily-themes">
+            <h2>Key Themes</h2>
+            <div class="theme-tags">{{THEMES}}</div>
+          </div>
+
+          <!-- Scripture References -->
+          <div class="homily-scripture">
+            <h2>Scripture References</h2>
+            <ul>
+              {{SCRIPTURE_REFS}}
+            </ul>
+          </div>
+
+          <!-- Full Transcript (collapsible) -->
+          <div class="homily-transcript">
+            <button
+              class="transcript-toggle"
+              aria-expanded="false"
+              onclick="
+                this.setAttribute(
+                  'aria-expanded',
+                  this.getAttribute('aria-expanded') === 'true'
+                    ? 'false'
+                    : 'true',
+                );
+                this.nextElementSibling.classList.toggle('open');
+              "
+            >
+              Read Full Transcript
+              <span class="toggle-icon">&#9660;</span>
+            </button>
+            <div class="transcript-content">{{TRANSCRIPT}}</div>
+          </div>
+        </article>
+
+        <!-- Previous / Next Navigation -->
+        <nav class="homily-nav" aria-label="Homily navigation">
+          {{PREV_LINK}} {{NEXT_LINK}}
+        </nav>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <ul class="footer-nav">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../blog.html">Homilies</a></li>
+          <li><a href="../spirituality.html">Spirituality</a></li>
+          <li><a href="../church-news.html">Church News</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../stuff.html">Stuff</a></li>
+          <li><a href="../prayer-partner.html">Prayer Partner</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="footer-content">
+          &copy; 2026 Deacon Henry Cugini &bull; Diocese of Trenton<br />
+          <em>Ambo Thoughts</em> &mdash; Reflections from the ambo to you.
+        </p>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
