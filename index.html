@@ -307,6 +307,16 @@
         window.netlifyIdentity.init({
           APIUrl: "https://ambothoughts.netlify.app/.netlify/identity",
         });
+
+        // Handle password recovery links (e.g. from forgot-password email)
+        // Recovery links use the hash: #recovery_token=<token>
+        if (
+          window.location.hash &&
+          window.location.hash.indexOf("recovery_token=") !== -1
+        ) {
+          window.netlifyIdentity.open("signup");
+        }
+
         window.netlifyIdentity.on("init", function (user) {
           if (!user) {
             window.netlifyIdentity.on("login", function () {
