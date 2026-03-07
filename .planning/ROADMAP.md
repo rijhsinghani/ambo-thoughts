@@ -20,18 +20,27 @@
 
 **Goal**: Visitors can access the full Ambo Thoughts site on a secure, performant WordPress VPS with all existing content migrated from GitHub Pages
 **Depends on**: Nothing (first phase). Requires user to purchase ChurchWP theme and provision DigitalOcean droplet.
-**Requirements**: HOSTING-_, THEME-_, DESIGN-_, CONTENT-_, SEO-_, SECURITY-_, BACKUP-_, MIGRATE-_
+**Requirements**: HOSTING-\*, THEME-\*, DESIGN-\*, CONTENT-\*, NEWS-\*, SPIRITUALITY-\*, GALLERY-\*, MIGRATION-\*, ADMIN-006
 **Estimated Complexity**: L (largest phase -- server setup, theme customization, 8+ pages of content migration, DNS cutover)
 
-**Success Criteria** (what must be TRUE when this phase completes):
+**Success Criteria** (updated per user decisions):
 
-1. The site loads at the production domain over HTTPS with no mixed-content warnings
-2. All 8 pages (About, Spirituality, Church News, Contact, Pictures, Prayer Partner, Stuff, Videos) display their content correctly with Navy/Gold branding
-3. The contact form delivers messages to both deacon267@verizon.net and hcugini@stroberts.cc
-4. The homepage hero slider cycles through all 3 slides (Ambo Thoughts, St. Francis quote, Psalm 46:10)
-5. Google can crawl the site (sitemap submitted, Rank Math configured, old .html URLs redirect to new permalinks)
+1. Site loads at production VPS IP over HTTP (SSL deferred -- no domain yet)
+2. All 8 pages display correctly with Navy/Gold branding
+3. Contact form is SKIPPED (deferred per user request)
+4. Homepage hero slider cycles through 3 slides (Ambo Thoughts, St. Francis quote, Psalm 46:10)
+5. Google crawling/SEO deferred until domain is set up (Rank Math + sitemap ready)
 
-**Plans**: TBD
+**Plans:** 6 plans in 3 waves
+
+Plans:
+
+- [ ] 1-01-PLAN.md -- Local WordPress setup (Local by Flywheel + ChurchWP + demo import + HEIC conversion)
+- [ ] 1-02-PLAN.md -- VPS infrastructure (DO droplet + LEMP stack + security hardening + WordPress install)
+- [ ] 1-03-PLAN.md -- Theme customization (Navy/Gold colors + header + typography + navigation)
+- [ ] 1-04-PLAN.md -- Content migration (all 8 pages + gallery + video embeds + homepage sections)
+- [ ] 1-05-PLAN.md -- Hero slider (3-slide Revolution Slider configuration)
+- [ ] 1-06-PLAN.md -- Deployment (rsync to VPS + SEO + backups + final verification)
 
 ---
 
@@ -39,7 +48,7 @@
 
 **Goal**: Homilies are structured content with liturgical metadata, browsable by visitors and publishable via the automated pipeline
 **Depends on**: Phase 1 (WordPress must be running on production)
-**Requirements**: HOMILY-_, PIPELINE-_, TAXONOMY-\*
+**Requirements**: HOMILY-\*, PIPELINE-\*, TAXONOMY-\*
 **Estimated Complexity**: M (CPT registration, two templates, REST API endpoint, pipeline adaptation, Bible verse widget)
 
 **Success Criteria** (what must be TRUE when this phase completes):
@@ -57,7 +66,7 @@
 
 **Goal**: Deacon Henry can independently manage site content, and the site runs reliably with monitoring and documented maintenance procedures
 **Depends on**: Phase 2 (all features must be complete before handoff)
-**Requirements**: ADMIN-_, MONITOR-_, DOCS-\*
+**Requirements**: ADMIN-\*, MONITOR-\*, DOCS-\*
 **Estimated Complexity**: S (configuration and documentation, no new features)
 
 **Success Criteria** (what must be TRUE when this phase completes):
@@ -74,7 +83,7 @@
 
 | Phase                                    | Plans Complete | Status      | Completed |
 | ---------------------------------------- | -------------- | ----------- | --------- |
-| 1. Infrastructure + Launch Site          | 0/?            | Not started | -         |
+| 1. Infrastructure + Launch Site          | 0/6            | Planned     | -         |
 | 2. Homily Content System                 | 0/?            | Not started | -         |
 | 3. Admin Handoff + Operational Hardening | 0/?            | Not started | -         |
 
@@ -82,22 +91,19 @@
 
 ## Coverage
 
-Requirements are referenced by category (REQUIREMENTS.md is being written in parallel).
-Cross-reference will be completed after both files exist.
-
-| Category    | Phase | Description                                                              |
-| ----------- | ----- | ------------------------------------------------------------------------ |
-| HOSTING-\*  | 1     | VPS provisioning, Nginx, PHP-FPM, MariaDB, Redis                         |
-| THEME-\*    | 1     | ChurchWP child theme, Navy/Gold CSS, header/footer                       |
-| DESIGN-\*   | 1     | Hero slider, homepage sections, page layouts                             |
-| CONTENT-\*  | 1     | Page content migration (all 8 pages), photo gallery, video embeds        |
-| SEO-\*      | 1     | Rank Math, sitemaps, redirects from old URLs                             |
-| SECURITY-\* | 1     | SSH hardening, UFW, fail2ban, Wordfence, file permissions                |
-| BACKUP-\*   | 1     | UpdraftPlus to Google Drive                                              |
-| MIGRATE-\*  | 1     | DNS cutover, SSL, old URL redirects, GitHub Pages deprecation            |
-| HOMILY-\*   | 2     | Custom Post Type, single/archive templates                               |
-| PIPELINE-\* | 2     | REST API endpoint, process_homilies.py adaptation, Application Passwords |
-| TAXONOMY-\* | 2     | Liturgical season taxonomy, scripture references, meta fields            |
-| ADMIN-\*    | 3     | Editor role, simplified admin panel, activity logging                    |
-| MONITOR-\*  | 3     | UptimeRobot, disable auto-updates                                        |
-| DOCS-\*     | 3     | Training document, maintenance runbook                                   |
+| Category        | Phase | Description                                                              |
+| --------------- | ----- | ------------------------------------------------------------------------ |
+| HOSTING-\*      | 1     | VPS provisioning, Nginx, PHP-FPM, MariaDB, Redis                         |
+| THEME-\*        | 1     | ChurchWP child theme, Navy/Gold CSS, header/footer                       |
+| DESIGN-\*       | 1     | Hero slider, homepage sections, page layouts                             |
+| CONTENT-\*      | 1     | Page content migration (all 8 pages), photo gallery, video embeds        |
+| NEWS-\*         | 1     | Vatican News + Diocese of Trenton links                                  |
+| SPIRITUALITY-\* | 1     | Hero image, gospel quote                                                 |
+| GALLERY-\*      | 1     | FooGallery, HEIC conversion, image compression, video embed              |
+| MIGRATION-\*    | 1     | URL redirects, SEO, DNS cutover, content transfer                        |
+| HOMILY-\*       | 2     | Custom Post Type, single/archive templates                               |
+| PIPELINE-\*     | 2     | REST API endpoint, process_homilies.py adaptation, Application Passwords |
+| TAXONOMY-\*     | 2     | Liturgical season taxonomy, scripture references, meta fields            |
+| ADMIN-\*        | 3     | Editor role, simplified admin panel, activity logging                    |
+| MONITOR-\*      | 3     | UptimeRobot, disable auto-updates                                        |
+| DOCS-\*         | 3     | Training document, maintenance runbook                                   |
