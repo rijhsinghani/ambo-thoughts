@@ -15,9 +15,9 @@
 
 ## Prerequisites
 
-- [ ] Purchase ChurchWP theme from ThemeForest (~$59)
-- [ ] Confirm domain name (ambothoughts.com or other)
-- [ ] Confirm DigitalOcean account ownership
+- [x] Purchase ChurchWP theme from ThemeForest (~$59) — at ~/Downloads/churchwp_package/
+- [x] Confirm DigitalOcean account — using Sameer's account
+- [ ] Confirm domain name (skipped for now)
 - [ ] Install Local by Flywheel for local development
 
 ## Open Questions
