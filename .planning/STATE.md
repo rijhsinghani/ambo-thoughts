@@ -17,10 +17,11 @@
 
 ## Prerequisites
 
-- [x] Purchase ChurchWP theme from ThemeForest (~$59) — at ~/Downloads/churchwp_package/
-- [x] Confirm DigitalOcean account — using Sameer's account
-- [ ] Confirm domain name (skipped for now)
-- [ ] Install Local by Flywheel for local development
+- [x] Purchase ChurchWP theme from ThemeForest (~$59)
+- [x] Provision GCP e2-micro VM (104.196.102.152)
+- [x] Install LEMP stack + WordPress
+- [x] Content migration from static HTML to WordPress
+- [ ] Confirm domain name (pending)
 
 ## Open Questions
 
@@ -30,4 +31,8 @@ See `.planning/research/SUMMARY.md` § Open Questions for full list.
 
 - 2026-03-07: Project initialized — PROJECT.md, config.json, research (4 agents), REQUIREMENTS.md (62 reqs), ROADMAP.md (3 phases)
 - 2026-03-07: Added Phase 4 (Video Blog) — process Hank's Google Drive videos into blog/video pages
-- 2026-03-07: Plan 1-02 complete — LEMP stack + WordPress on GCP e2-micro (34.74.60.206)
+- 2026-03-07: Plan 1-02 complete — LEMP stack + WordPress on GCP e2-micro (104.196.102.152)
+- 2026-03-13: Content migration — homily posts, hero images, page content all on WordPress
+- 2026-03-17: Fixed upload permissions (chown uploads dir) and activated TinyMCE Advanced for font controls
+- 2026-03-17: Site audit — documented concerns in .planning/CONCERNS.md
+- 2026-03-17: Updated PROJECT.md — references now point to WordPress site, not static .html files
